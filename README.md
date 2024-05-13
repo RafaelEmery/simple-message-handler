@@ -12,7 +12,7 @@ In order to represent a problem to solve, there was a context that was thought a
 
 ### Diagram
 
-![flow](./images/loafer-handler-poc.png)
+![flow](./images/handler-poc.png)
 
 ### Assets
 
