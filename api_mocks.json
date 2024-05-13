@@ -1,0 +1,113 @@
+{
+  "uuid": "bbca1096-9967-4581-801b-aab94f8ac387",
+  "lastMigration": 32,
+  "name": "Api mocks",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3026,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "c9a213ed-c350-4658-b4bc-29d0ba6be3dd",
+      "type": "http",
+      "documentation": "Get all packages from order",
+      "method": "get",
+      "endpoint": "orders/:id/packages",
+      "responses": [
+        {
+          "uuid": "a2147313-ae11-4c39-bb76-02dc1f59ee47",
+          "body": "{\n  \"result\": [\n    {\n      \"id\": \"2720ae5f-475e-4033-90bb-317dc77db93d\"\n      \"name\": \"Test Package Name 1\",\n      \"status\": \"sent\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "312f6e6a-db2b-4616-a954-748db3a4844f",
+      "type": "http",
+      "documentation": "",
+      "method": "patch",
+      "endpoint": "packages/:id",
+      "responses": [
+        {
+          "uuid": "9920e21b-21a3-49de-a06f-f434a5ce4f1f",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "c9a213ed-c350-4658-b4bc-29d0ba6be3dd"
+    },
+    {
+      "type": "route",
+      "uuid": "312f6e6a-db2b-4616-a954-748db3a4844f"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

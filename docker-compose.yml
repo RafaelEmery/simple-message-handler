@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    environment:
+      - SERVICES=s3,dynamodb,sns,sqs
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=access_key_id
+      - AWS_SECRET_ACCESS_KEY=secret_access_key
+    ports:
+      - "${LOCALSTACK_PORT}:4566" # localstack endpoint
+      - "4510-4559:4510-4559" # external services port range
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "${PWD}/localstack.sh:/etc/localstack/init/ready.d/script.sh"
+
+  api-mocks:
+    image: mockoon/cli:latest
+    container_name: api_mocks
+    command: [ "--data", "data", "--port", "3000" ]
+    volumes:  
+      - "./api_mocks.json:/data" 
+    ports:
+      - "${API_MOCKS_PORT}:3000"
