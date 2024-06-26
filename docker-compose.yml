@@ -11,7 +11,7 @@ services:
       - AWS_ACCESS_KEY_ID=access_key_id
       - AWS_SECRET_ACCESS_KEY=secret_access_key
     ports:
-      - "${LOCALSTACK_PORT}:4566" # localstack endpoint
+      - "4566:4566" # localstack endpoint
       - "4510-4559:4510-4559" # external services port range
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
@@ -24,4 +24,4 @@ services:
     volumes:  
       - "./api_mocks.json:/data" 
     ports:
-      - "${API_MOCKS_PORT}:3000"
+      - "3026:3000"
