@@ -6,3 +6,6 @@ dep-stop:
 
 dep-logs:
 	docker-compose logs -f
+
+run:
+	poetry run python -m loafer_handler
