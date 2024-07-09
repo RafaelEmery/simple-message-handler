@@ -17,7 +17,7 @@ create-queue --queue-name canceled_orders \
 
 echo "subscribing queue to topics"
 
-awslocal sns \
+awslocal sns \awslocal sqs receive-message --queue-url http://localhost:4566/000000000000/canceled_orders
 subscribe --topic-arn "arn:aws:sns:us-east-1:000000000000:order_canceled" \
 --protocol sqs  \
 --notification-endpoint arn:aws:sqs:us-east-1:000000000000:canceled_orders

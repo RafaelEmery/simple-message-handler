@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     LOCALSTACK_PORT: int
+    LOCALSTACK_ENDPOINT: str
     API_MOCKS_PORT: int
 
     CANCELED_ORDERS_QUEUE_NAME: str
