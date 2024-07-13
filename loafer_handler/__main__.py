@@ -30,4 +30,5 @@ if args.flag == 'manual':
 else: 
     service = LoaferManager(routes=routes)
     logger.info('starting service...')
+    # FIXME: error on LoaferManager run - type object '_asyncio.Task' has no attribute 'all_tasks'
     service.run()
