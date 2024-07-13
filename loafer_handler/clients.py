@@ -1,3 +1,5 @@
+from requests import get
+
 from .config import settings
 
 
@@ -8,14 +10,16 @@ class OrderClient:
     def __init__(self, base_url: str) -> None:
         self.base_url = base_url
         
-    def get_order_packages(id: str):
-        pass
+    def get_order_packages(self, id: str):
+        # TODO: convert and return an order package model
+        response = get(f'{self.base_url}/orders/{id}/packages')
+        return response.json()
     
 class PackageClient:
     def __init__(self, base_url) -> None:
         self.base_url = base_url
         
-    def updated_package(id: str, body: dict):
+    def update_package(id: str, body: dict):
         pass
     
 
