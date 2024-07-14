@@ -44,8 +44,7 @@ class SNSClient:
             TopicArn=self.topic_arn,
             Message=json.dumps(payload)
         )
-        pass
-    
+        
 
 order_client = OrderClient(api_base_url)
 package_client = PackageClient(api_base_url)
