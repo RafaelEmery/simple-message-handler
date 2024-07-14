@@ -24,9 +24,9 @@ class OrderCanceledHandler:
             logger.error(f'[OrderCanceledHandler] error processing message - {e}')
             return False
     
-    def _cancel_package(id: str, name: str) -> Package:
+    def _cancel_package(self, id: str, name: str) -> Package:
         try:
-            package = Package(id, name, 'canceled')
+            package = Package(id=id, name=name, status='canceled')
             package_client.update_package(id, package)
             
             return package

@@ -1,6 +1,6 @@
 import json
 from requests import get, patch
-from boto3 import client
+from boto3 import client as sns_client
 from typing import Any
 
 from .config import settings
@@ -35,12 +35,12 @@ class PackageClient:
 
 
 class SNSClient:
-    def __init__(self, topic_arn, endpoint_url) -> None:
+    def __init__(self, topic_arn) -> None:
         self.topic_arn = topic_arn
-        self.client = client('sns', endpoint_url)
     
     def publish_message(self, payload: Any):
-        self.client.publish(
+        client = sns_client('sns', settings.LOCALSTACK_ENDPOINT)
+        client.publish(
             TopicArn=self.topic_arn,
             Message=json.dumps(payload)
         )
@@ -48,4 +48,4 @@ class SNSClient:
 
 order_client = OrderClient(api_base_url)
 package_client = PackageClient(api_base_url)
-package_canceled_topic = SNSClient(package_canceled_topic_arn, settings.LOCALSTACK_ENDPOINT)
+package_canceled_topic = SNSClient(package_canceled_topic_arn)

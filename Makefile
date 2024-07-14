@@ -16,6 +16,9 @@ view-messages:
 publish-sample:
 	@poetry run python message_publisher.py
 
+test:
+	pytest -v -x --cov=loafer_handler --cov-report=term
+
 manual-run:
 	@poetry run python -m loafer_handler --flag manual
 
