@@ -1,3 +1,7 @@
+list-commands:
+	@echo "Listing commands..."
+	@grep '^[a-zA-Z0-9_-]*:' Makefile | cut -d ':' -f 1
+
 dep-start:
 	docker-compose up -d
 
