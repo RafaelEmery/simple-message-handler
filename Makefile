@@ -20,6 +20,9 @@ view-messages:
 publish-sample:
 	@poetry run python message_publisher.py
 
+lint:
+	poetry run pre-commit install && poetry run pre-commit run -a -v
+
 test:
 	pytest -v -x --cov=loafer_handler --cov-report=term
 

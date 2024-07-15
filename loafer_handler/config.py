@@ -9,9 +9,9 @@ class Settings(BaseSettings):
     CANCELED_ORDERS_QUEUE_NAME: str
     ORDER_CANCELED_TOPIC_NAME: str
     PACKAGE_CANCELED_TOPIC_NAME: str
-    
+
     class Config:
-        env_file = '.env'
+        env_file = ".env"
 
 
 settings = Settings()

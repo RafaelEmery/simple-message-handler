@@ -3,9 +3,7 @@ from loafer.ext.aws.routes import SNSQueueRoute
 from .config import settings
 from .handler import OrderCanceledHandler
 
-options = {
-   'endpoint_url': settings.LOCALSTACK_ENDPOINT 
-}
+options = {"endpoint_url": settings.LOCALSTACK_ENDPOINT}
 
 routes = (
     SNSQueueRoute(

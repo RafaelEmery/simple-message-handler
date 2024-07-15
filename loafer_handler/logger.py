@@ -1,14 +1,14 @@
 import logging
 
 
-logger_name = 'loafer_manager'
+logger_name = "loafer_manager"
 logger = logging.getLogger(logger_name)
 logger.setLevel(logging.INFO)
 
 handler = logging.StreamHandler()
 handler.setLevel(logging.INFO)
 
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 handler.setFormatter(formatter)
 
 logger.addHandler(handler)
